@@ -30,5 +30,9 @@ createApp({
         }
     },
     methods: {
+        delete(index){
+            todolist.splice(index, 1)
+            console.log(number)
+        }
     }
 }).mount('#app')

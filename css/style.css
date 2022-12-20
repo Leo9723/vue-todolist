@@ -4,6 +4,10 @@
     margin: 0;
 }
 
+.list {
+    display: flex;
+}
+
 .bar {
     text-decoration: line-through;
 }

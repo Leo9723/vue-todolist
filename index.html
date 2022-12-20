@@ -13,6 +13,7 @@
             <div class="element" :class="(todolist[index].done == true) ? 'bar' : ''">
                 {{ index }} - {{ todolist[index].text }}
             </div>
+            <button class="delete" @click="delete(index)">XXX</button>
         </div>
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
