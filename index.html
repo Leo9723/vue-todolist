@@ -10,7 +10,7 @@
 <body>
     <div id="app" class="container">
         <div class="list" v-for="(todo, index) in todolist">
-            <div class="element" :class="(todolist[index].done == true) ? 'bar' : ''">
+            <div class="element" :class="(todolist[index].done == true) ? 'bar' : ''" @click="barclick(index)">
                 {{ index }} - {{ todolist[index].text }}
             </div>
             <button class="delete" @click="remove(index)">XXX</button>

@@ -41,6 +41,14 @@ createApp({
             },
             this.todolist.push(newitemarray)
             this.newtodo = ''
+        },
+        barclick(number){
+            if(this.todolist[number].done == false) {
+                this.todolist[number].done = true
+            }
+            else {
+                this.todolist[number].done = false
+            }
         }
     }
 }).mount('#app')
