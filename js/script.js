@@ -5,6 +5,7 @@ const {
 createApp({
     data() {
         return {
+            newtodo: '',
             todolist : [
                 {
                     text: 'fare la spesa',
@@ -32,6 +33,14 @@ createApp({
     methods: {
         remove(number){
             this.todolist.splice(number, 1);
+        },
+        addtodo(newitem, number){
+            newitemarray = {
+                text: this.newtodo,
+                done: false
+            },
+            this.todolist.push(newitemarray)
+            this.newtodo = ''
         }
     }
 }).mount('#app')

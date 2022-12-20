@@ -15,8 +15,10 @@
             </div>
             <button class="delete" @click="remove(index)">XXX</button>
         </div>
+        <input type="text" name="" id="" v-model="newtodo"> 
+        <button @click="addtodo(newtodo, todolist.length)">V</button>
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="./js/script.js"></script>
+    <script src="./js/script.js"></script> 
 </body>
 </html>
