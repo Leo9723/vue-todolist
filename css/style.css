@@ -2,6 +2,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .list {
@@ -11,3 +12,57 @@
 .bar {
     text-decoration: line-through;
 }
+
+.container {
+    width: 40%;
+    margin: 0 auto;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 30px;
+    margin-top: 100px;
+}
+
+.list {
+    margin: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-bar {
+    margin-left: 15px;
+    border: 1px solid rgb(18, 18, 110);
+    border-right: 0px;
+    border-radius: 5px 0px 0px 5px;
+    padding: 7px;
+}
+
+.delete-button {
+ background-color: red;
+ padding: 7px 10px;
+ border: 1px solid rgb(65, 0, 0);
+ border-radius: 5px;
+}
+.delete-button:hover {
+ background-color: rgb(155, 1, 1);
+}
+
+.delete-button:active {
+ background-color: rgb(90, 0, 0);
+}
+
+.enter-button {
+background-color: rgb(33, 92, 240);
+color: white;
+padding: 7px 10px;
+border: 1px solid rgb(18, 18, 110);
+border-radius: 0px 5px 5px 0px;
+}
+
+.enter-button:hover {
+    background-color: rgb(27, 68, 173);
+}
+
+.enter-button:active {
+    background-color: rgb(20, 48, 118);
+}
+

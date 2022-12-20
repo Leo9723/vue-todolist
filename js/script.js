@@ -5,27 +5,33 @@ const {
 createApp({
     data() {
         return {
+            listitem: '',
             newtodo: '',
             todolist : [
                 {
                     text: 'fare la spesa',
-                done: false
+                    done: false,
+                    toggle: true
                  },
                  {
                     text: 'fare regali di natale',
-                done: false
+                done: false,
+                toggle: true
                  },
                  {
                     text: 'preparare pranzo natale',
-                done: true
+                done: true,
+                toggle: true
                  },
                  {
                     text: 'prenotare per capodanno',
-                done: false
+                done: false,
+                toggle: true
                  },
                  {
                     text: 'preparare il cacciucco',
-                done: true
+                done: true,
+                toggle: true
                  }
             ]
         }
@@ -48,6 +54,14 @@ createApp({
             }
             else {
                 this.todolist[number].done = false
+            }
+        },
+        modifyitem(number) {
+            if(this.todolist[number].toggle == true) {
+                this.todolist[number].toggle = false
+            }
+            else {
+                this.todolist[number].toggle = true
             }
         }
     }

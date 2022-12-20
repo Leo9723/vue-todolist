@@ -4,19 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
     <title>Document</title>
 </head>
 <body>
     <div id="app" class="container">
         <div class="list" v-for="(todo, index) in todolist">
-            <div class="element" :class="(todolist[index].done == true) ? 'bar' : ''" @click="barclick(index)">
+            <div class="element" :class="(todolist[index].done == true) ? 'bar' : ''" @click="barclick(index)" v-if="this.todolist[index].toggle == true">
                 {{ index }} - {{ todolist[index].text }}
             </div>
-            <button class="delete" @click="remove(index)">XXX</button>
+            <input type="text" v-else>
+            <button @click="modifyitem(index)">MMM</button>
+            <button class="delete-button" @click="remove(index)"><i class="fa-solid fa-xmark"></i></button>
         </div>
-        <input type="text" name="" id="" v-model="newtodo" @keyup.enter="addtodo(newtodo, todolist.length)"> 
-        <button @click="addtodo(newtodo, todolist.length)">V</button>
+        <input type="text" name="" class="input-bar" v-model="newtodo" @keyup.enter="addtodo(newtodo, todolist.length)" placeholder="Aggiungi un elemento"> 
+        <button @click="addtodo(newtodo, todolist.length)" class="enter-button"><i class="fa-solid fa-arrow-up-from-bracket"></i></button>
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./js/script.js"></script> 
