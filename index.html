@@ -10,13 +10,16 @@
 </head>
 <body>
     <div id="app" class="container">
+        <h1>To Do List</h1>
         <div class="list" v-for="(todo, index) in todolist">
             <div class="element" :class="(todolist[index].done == true) ? 'bar' : ''" @click="barclick(index)" v-if="this.todolist[index].toggle == true">
-                {{ index }} - {{ todolist[index].text }}
+                {{ index + 1 }} - {{ todolist[index].text }}
             </div>
-            <input type="text" v-else>
-            <button @click="modifyitem(index)">MMM</button>
-            <button class="delete-button" @click="remove(index)"><i class="fa-solid fa-xmark"></i></button>
+            <input type="text" v-else v-model="newModifyText" @keyup.enter="modifyitem(index)">
+            <div>
+                <button class="modify-button" @click="modifyitem(index)"><i class="fa-solid fa-pen-to-square"></i></button>
+                <button class="delete-button" @click="remove(index)"><i class="fa-solid fa-xmark"></i></button>
+            </div>
         </div>
         <input type="text" name="" class="input-bar" v-model="newtodo" @keyup.enter="addtodo(newtodo, todolist.length)" placeholder="Aggiungi un elemento"> 
         <button @click="addtodo(newtodo, todolist.length)" class="enter-button"><i class="fa-solid fa-arrow-up-from-bracket"></i></button>

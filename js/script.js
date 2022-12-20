@@ -5,6 +5,7 @@ const {
 createApp({
     data() {
         return {
+            newModifyText: '',
             listitem: '',
             newtodo: '',
             todolist : [
@@ -43,7 +44,8 @@ createApp({
         addtodo(newitem, number){
             newitemarray = {
                 text: this.newtodo,
-                done: false
+                done: false,
+                toggle: true
             },
             this.todolist.push(newitemarray)
             this.newtodo = ''
@@ -62,6 +64,8 @@ createApp({
             }
             else {
                 this.todolist[number].toggle = true
+                this.todolist[number].text = this.newModifyText
+                this.newModifyText = ''
             }
         }
     }
