@@ -60,6 +60,7 @@ createApp({
         },
         modifyitem(number) {
             if(this.todolist[number].toggle == true) {
+                this.newModifyText = this.todolist[number].text
                 this.todolist[number].toggle = false
             }
             else {
