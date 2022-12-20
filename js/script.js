@@ -30,9 +30,8 @@ createApp({
         }
     },
     methods: {
-        delete(index){
-            todolist.splice(index, 1)
-            console.log(number)
+        remove(number){
+            this.todolist.splice(number, 1);
         }
     }
 }).mount('#app')
